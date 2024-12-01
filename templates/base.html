@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    {% block head %}
+
+    {% endblock %}
+</head>
+
+{% if user.is_authenticated %}
+<h1>{{user}}</h1>
+<li>
+    <a href="{% url 'logout' %}">خروج از حساب</a>
+</li>
+{% else %}
+<li>
+    <a href="{% url 'login' %}">وارد شوید!</a>
+</li>
+<li>
+    <a href="{% url 'register' %}">ثبت نام</a>
+</li>
+{% endif %}
+
+<body>
+    <h1></h1>
+    {% block content %}
+
+    {% endblock %}
+</body>
+
+</html>

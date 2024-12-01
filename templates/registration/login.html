@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>وارد شدن به حساب | وبلاگ اندیشه نگار</title>
+{% endblock %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">login</button>
+</form>
+
+{% endblock %}
